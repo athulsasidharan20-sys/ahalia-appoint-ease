@@ -13,11 +13,19 @@ interface HospitalCardProps {
 export const HospitalCard = ({ hospital, index, onSelect }: HospitalCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -8, scale: 1.02 }}
-      className="group relative bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+      transition={{ 
+        duration: 0.6, 
+        delay: index * 0.08,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
+      whileHover={{ 
+        y: -6, 
+        scale: 1.015,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+      className="group relative bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-500 ease-out"
     >
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
@@ -26,9 +34,13 @@ export const HospitalCard = ({ hospital, index, onSelect }: HospitalCardProps) =
           <motion.img
             src={logo}
             alt="Ahalia Hospitals"
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+            transition={{ 
+              duration: 0.5, 
+              delay: index * 0.08 + 0.15,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
             className="h-20 w-auto object-contain drop-shadow-lg"
           />
         </div>
