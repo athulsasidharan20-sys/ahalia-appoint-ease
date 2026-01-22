@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { hospitals } from "@/data/hospitals";
 import { HospitalCard } from "@/components/HospitalCard";
 import { Hospital } from "@/types/booking";
-import { Building2 } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const HospitalsPage = () => {
   const navigate = useNavigate();
@@ -15,16 +15,21 @@ const HospitalsPage = () => {
   return (
     <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Header with Logo Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-            <Building2 className="w-8 h-8 text-primary" />
-          </div>
+          <motion.img
+            src={logo}
+            alt="Ahalia Hospitals"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="h-20 md:h-28 w-auto object-contain mx-auto mb-6"
+          />
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our <span className="text-gradient">Hospitals</span>
           </h1>

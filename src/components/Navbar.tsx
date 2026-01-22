@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Home, Building2, Stethoscope, Calendar, Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.jpeg";
 
 const navItems = [
   { name: "Home", path: "/", icon: Home },
@@ -26,14 +27,13 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-hero-gradient flex items-center justify-center shadow-lg"
-            >
-              <span className="text-white font-bold text-lg md:text-xl">A</span>
-            </motion.div>
-            <span className="text-xl md:text-2xl font-bold text-gradient">AHALIA</span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <motion.img
+              src={logo}
+              alt="Ahalia Hospitals"
+              whileHover={{ scale: 1.05 }}
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
