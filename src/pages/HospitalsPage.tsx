@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { hospitals } from "@/data/hospitals";
 import { HospitalCard } from "@/components/HospitalCard";
 import { Hospital } from "@/types/booking";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 const HospitalsPage = () => {
   const navigate = useNavigate();
