@@ -17,17 +17,24 @@ const HospitalsPage = () => {
       <div className="container mx-auto px-4">
         {/* Header with Logo Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ 
+            duration: 0.7, 
+            ease: [0.25, 0.46, 0.45, 0.94] 
+          }}
           className="text-center mb-12"
         >
           <motion.img
             src={logo}
             alt="Ahalia Hospitals"
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ 
+              duration: 0.6, 
+              delay: 0.1,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
             className="h-20 md:h-28 w-auto object-contain mx-auto mb-6"
           />
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
