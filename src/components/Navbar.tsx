@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Home, Building2, Stethoscope, Calendar, Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { name: "Home", path: "/", icon: Home },
