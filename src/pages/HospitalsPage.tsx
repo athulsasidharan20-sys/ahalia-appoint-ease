@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { hospitals } from "@/data/hospitals";
 import { HospitalCard } from "@/components/HospitalCard";
 import { Hospital } from "@/types/booking";
-import logo from "@/assets/logo.png";
+import { PageHeader } from "@/components/PageHeader";
 
 const HospitalsPage = () => {
   const navigate = useNavigate();
@@ -13,40 +13,30 @@ const HospitalsPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12">
-      <div className="container mx-auto px-4">
-        {/* Header with Logo Banner */}
+    <div>
+      <PageHeader
+        title="Our Hospitals"
+        breadcrumbs={[
+          { label: "Home", path: "/" },
+          { label: "Hospitals" },
+        ]}
+      />
+
+      <div className="container mx-auto px-4 pb-16">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.7, 
-            ease: [0.25, 0.46, 0.45, 0.94] 
-          }}
-          className="text-center mb-12"
+          viewport={{ once: true }}
+          className="text-center mb-12 max-w-xl mx-auto"
         >
-          <motion.img
-            src={logo}
-            alt="Ahalia Hospitals"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
-              duration: 0.6, 
-              delay: 0.1,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-            className="h-20 md:h-28 w-auto object-contain mx-auto mb-6"
-          />
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our <span className="text-gradient">Hospitals</span>
-          </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Choose from our network of specialized healthcare facilities, each offering
-            world-class medical services and expert care.
-          </p>
+          <span className="inline-block border border-border rounded-full py-1.5 px-5 text-sm text-muted-foreground mb-4">
+            Hospitals
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            Our Healthcare Facilities
+          </h2>
         </motion.div>
 
-        {/* Hospital Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {hospitals.map((hospital, index) => (
             <HospitalCard
